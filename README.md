@@ -8,9 +8,9 @@ Core features:
 - Add to favorites/playlist
 - Upload (optional)
 
-For Now:
+Frontend:
 
-Login Page
-Register Page
-Homepage
-Plalists
+- Login Page
+- Register Page
+- Homepage
+- Playists
