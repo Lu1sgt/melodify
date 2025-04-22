@@ -1,3 +1,5 @@
+<b>*Ignore index.html outside of sourcecode</b>
+
 Welcome to Melodify
 
 Core features:
@@ -17,6 +19,7 @@ Frontend:
 
 
 Project Work Flow
+
 <pre>
 /melodify/
 ├── /assets/
@@ -32,10 +35,11 @@ Project Work Flow
 │     ├── library.html     # Music library page
 │     ├── playlist.html    # Optional: playlist/favorites page
 │       
-├── /components/         # Optional: reusable HTML snippets (header, footer)
+├── /components/           # Optional: reusable HTML snippets (header, footer)
 │   ├── header.html
 │   └── footer.html
 │
 ├── README.md
 └── index.html  
 </pre>
+
