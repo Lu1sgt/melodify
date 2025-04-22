@@ -16,7 +16,7 @@ Frontend:
 - Playists
 
 
-Project Worklfow
+Project Work Flow
 <pre>
 /melodify/
 ├── /assets/
