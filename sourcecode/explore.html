@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Explore</title>
+
+    <style>
+        body {
+            background: linear-gradient(to right, #9400d3, #ff0094);
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .song-thumb {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .song-thumb:hover {
+            transform: scale(1.05);
+        }
+        .hide-scrollbar {
+            overflow-x: scroll;
+            scrollbar-width: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-3">
+        <!-- New Albums and Singles -->
+        <h4 class="fw-bold mb-3">New albums and singles</h4>
+        <div class="row mb-4 overflow-auto hide-scrollbar g-2">
+          <div class="d-flex flex-nowrap gap-4 pb-2">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/burnout.jpg" alt="Burnout" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Burnout</p>
+                <small class="text-light">Song | Sugarfree</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/sameground.jpg" alt="Same Ground" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Same Ground</p>
+                <small class="text-light">Song | Kitchie Nadal</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/babyblueeyes.jpg" alt="Baby Blue Eyes" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Baby Blue Eyes</p>
+                <small class="text-light">Song | A Rocket to the Moon</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/multo.jpg" alt="Silakbo" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Silakbo</p>
+                <small class="text-light">Album | Cup of Joe</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/niki.jpg" alt="Dagok Time" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Dagok Time</p>
+                <small class="text-light">Podcast | Sophie Prime</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/niki.jpg" alt="Dagok Time" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Dagok Time</p>
+                <small class="text-light">Podcast | Sophie Prime</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/niki.jpg" alt="Dagok Time" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Dagok Time</p>
+                <small class="text-light">Podcast | Sophie Prime</small>
+              </div>
+              <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <img src="assets/niki.jpg" alt="Dagok Time" class="img-fluid song-thumb">
+                <p class="mt-2 mb-0 fw-semibold text-white">Dagok Time</p>
+                <small class="text-light">Podcast | Sophie Prime</small>
+              </div>
+          </div>
+        </div>
+      
+        <!-- Moods and Genres -->
+        <h4 class="fw-bold mb-3">Moods and genres</h4>
+        <div class="genre-card row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2">
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-danger" style="width:12px; height:12px;"></div>Chill</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-warning" style="width:12px; height:12px;"></div>Pop</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-orange" style="width:12px; height:12px;"></div>Hip-Hop</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-primary" style="width:12px; height:12px;"></div>Sleep</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-danger" style="width:12px; height:12px;"></div>Rock</div>        
+
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-danger" style="width:12px; height:12px;"></div>Chill</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-warning" style="width:12px; height:12px;"></div>Pop</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-orange" style="width:12px; height:12px;"></div>Hip-Hop</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-primary" style="width:12px; height:12px;"></div>Sleep</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-danger" style="width:12px; height:12px;"></div>Rock</div>
+        
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-pink" style="width:12px; height:12px;"></div>2000s</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-navy" style="width:12px; height:12px;"></div>Party</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-purple" style="width:12px; height:12px;"></div>R&B and Soul</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-success" style="width:12px; height:12px;"></div>Folk and Acoustic</div>
+            <div class="d-flex align-items-center bg-light text-dark p-2 rounded"><div class="me-2 bg-info" style="width:12px; height:12px;"></div>K-Pop</div>
+        </div>
+      </div>      
+</body>
+</html>
