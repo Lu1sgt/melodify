@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+if (!isset($_POST['csrf_token'])){
+    die("CRSF token is missing.");
+}
+
+if ($_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     die("Invalid CSRF token.");
 }
 
@@ -45,7 +49,7 @@ $stmt->bind_param("sss", $email, $username, $hashed_password);
 
 if ($stmt->execute()) {
     session_regenerate_id(true); 
-    
+
     echo "Signup successful! <a href='login.html'>Log in here</a>";
 } else {
     echo "Error: " . $stmt->error;
