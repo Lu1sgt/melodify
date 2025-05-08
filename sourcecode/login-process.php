@@ -28,7 +28,9 @@ if ($result->num_rows > 0) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['last_activity'] = time(); 
-        header("Location: home.html");
+
+        $username = urlencode($user['username']);
+        header("Location: home.php?user=$username");
         exit();
     } else {
         echo "Invalid password. <a href='login.html'>Try again</a>";
