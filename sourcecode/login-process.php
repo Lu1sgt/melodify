@@ -24,16 +24,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (password_verify($password, $hashedPassword)) {
             $_SESSION['user_id'] = $id; 
+            $conn->close();
             header("Location: dashboard.html"); 
             exit();
         } else {
+            $conn->close();
             die('Invalid password.');
         }
     } else {
+        $conn->close();
         die('No user found with this email.');
     }
-
-    $stmt->close();
-    $conn->close();
 }
-?>
