@@ -1,0 +1,307 @@
+<?php
+session_start();
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melodify - Your sound, your world!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      color: #000000;
+      font-size: 1.2 rem;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      background-color: #f8f8f8;
+      padding: 20px;
+    }
+
+    .nav-link {
+      color: #000000;
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      color: #9400D3;
+    }
+
+    .btn-signup {
+      border-radius: 20px;
+      padding: 13px;
+      background-color: #9400D3;
+      color: #f8f8f8;
+      font-weight: bold;
+    }
+
+    .btn-signup:hover {
+      background-color: #c773eb;
+      color: #000000;
+    }
+
+    .btn-login {
+      border-radius: 20px;
+      padding: 13px;
+      border: 2px solid #000000;
+      color: #000000;
+      font-weight: bold;
+    }
+
+    .btn-login:hover {
+      border: 2px solid #9400D3;
+      color: #9400D3;
+    }
+
+    .btn-start {
+      border-radius: 20px;
+      padding: 10px;
+      background-color: #9400D3;
+      color: #f8f8f8;
+      font-weight: bold;
+    }
+
+    .btn-start:hover {
+      background-color: #c773eb;
+      color: #000000;
+    }
+
+    .btn-signup a {
+      text-decoration: none;
+      color: #f8f8f8;
+    }
+
+    .btn-login a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .btn-start a {
+      text-decoration: none;
+      color: #f8f8f8;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
+      background-image: url('assets/bg1.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 450px;
+    }
+
+    .col-md-7 {
+      padding: 10px;
+    }
+
+    .hero-text h1 {
+      color: #f8f8f8;
+      font-family: "Anton", sans-serif;
+      font-weight: 800;
+      font-size: 3.5rem;
+      margin-top: 30px;
+    }
+
+    .hero-text p {
+      color: #f8f8f8;
+      margin: 1rem 0;
+      font-size: 1.2rem;
+    }
+
+    .hero-img+.shape-animate {
+      width: 150px;
+      height: 150px;
+    }
+
+    .about-section {
+      padding: 3rem 2rem;
+      padding: 30px;
+      background-color: #9400D3;
+      color: #f8f8f8;
+    }
+
+    .about-section h1 {
+      font-weight: bold;
+      font-size: 3rem;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .col-md-8 {
+      padding: 10px;
+    }
+
+    .community-box {
+      background: #f8f8f8;
+      color: #000000;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+    .community-box p {
+      border-left: #000000 solid 4px;
+      padding: 10px;
+    }
+
+    .developer-section {
+      padding: 3rem 2rem;
+      background-color: #f8f8f8;
+    }
+
+    .developer-section h1 {
+      color: #000000;
+      font-weight: bold;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .developer-section img {
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .contact-icons i {
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/Melodify Logo.png" alt="Melodify Logo" width="40">
+      </a>
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="explore.php">Explore</a></li>
+        </ul>
+        <?php if (isset($_SESSION['username'])): ?>
+          <button class="btn"><a href="logout.php">Logout</a></button>
+        <?php else: ?>
+          <button class="btn btn-signup me-3"><a href="signup.html">Sign Up</a></button>
+          <button class="btn btn-login"><a href="login.php">Log In</a></button>
+        <?php endif; ?>
+      </div>
+    </div>
+  </nav>
+  <section class="hero d-flex align-items-center justify-content-center" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7 hero-text">
+          <?php if (isset($_SESSION['username'])): ?>
+            <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+            <p>Continue where you left off. Stream unlimited music, discover new artists, and vibe to your favorite tunes—anytime, anywhere.</p>
+            <button class="btn btn-start"><a href="explore.php">Get Started</a></button>
+
+          <?php else: ?>
+            <h1>Your sound, your world!</h1>
+            <p>Stream unlimited music, discover new artists, and vibe to your favorite tunes—anytime, anywhere.</p>
+            <button class="btn btn-start"><a href="login.php">Get Started</a></button>
+
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>About Us</h1>
+          <p>Melodify isn’t just a music app – it’s your personal sound universe. From sunrise sprints to midnight musings, we’re here to amplify every moment with the perfect track or thought-provoking podcast. Dive into a world where melodies meet moods. With an ever-growing library of songs, stories, and sonic surprises, Melodify adapts to your rhythm. You’re in control – create playlists that match your energy, follow your favorite creators, or hit shuffle and see where the vibe takes you.</p>
+          <p>Discover soundscapes shaped by real people, not just algorithms. Artists, tastemakers, and everyday listeners like you are building the soundtrack of now.</p>
+          <p>This isn’t background noise – this is Melodify. Press play and feel the difference.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="community-box">
+            <h4> Community & Culture</h4>
+            <p>"At the heart of Melodify is a global community of listeners and artists who believe music is more than just a beat – it’s a bridge."</p>
+            <div id="contact" class="contact-icons mt-4">
+              <h4>Contact Us</h4>
+              <li><i class="bi bi-envelope"></i> melodify@gmail.com</li>
+              <li><i class="bi bi-instagram"></i> @melodify</li>
+              <li><i class="bi bi-twitter"></i> @melodify</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="developer-section">
+    <div class="container text-center mt-5">
+      <h1>Meet the Developers</h1>
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <img src="assets/niki.jpg" alt="Developer 1" class="rounded-circle" width="150" height="150">
+          <h4>Aron Jay Formento</h4>
+          <p>Role: Frontend Developer</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="assets/multo.jpg" alt="Developer 2" class="rounded-circle" width="150" height="150">
+          <h4>Francis Garbosa</h4>
+          <p>Role: Frontend Developer</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="assets/sameground.jpg" alt="Developer 3" class="rounded-circle" width="150" height="150">
+          <h4>Liam Gestiada</h4>
+          <p>Role: Frontend Developer</p>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="assets/burnout.jpg" alt="Developer 4" class="rounded-circle" width="150" height="150">
+          <h4>Antonio Diego Luis Gillego</h4>
+          <p>Role: Frontend Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const shapes = document.querySelectorAll('.shape-animate');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('shape-visible');
+          }, 300);
+        }
+      });
+    });
+    shapes.forEach((shape) => observer.observe(shape));
+
+    const currentPage = window.location.pathname.split('/').pop();
+    documment.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</body>
+
+</html>
